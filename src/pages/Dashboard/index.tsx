@@ -89,8 +89,6 @@ const Dashboard: React.FC = () => {
         });
 
         setAppointments(appointmentsFormatted);
-
-        console.log(response.data);
       });
   }, [selectedDate]);
 
