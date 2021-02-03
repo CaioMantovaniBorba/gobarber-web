@@ -37,9 +37,9 @@ const SignIn: React.FC = () => {
         const schema = Yup.object().shape({
           password: Yup.string().required('Senha obrigatória'),
           password_confirmation: Yup.string().oneOf(
-          [Yup.ref('password')],
-           'Confirmação incorreta'
-           ),
+            [Yup.ref('password')],
+            'Confirmação incorreta',
+          ),
         });
 
         await schema.validate(data, {
@@ -56,7 +56,7 @@ const SignIn: React.FC = () => {
         await api.post('/password/reset', {
           password,
           password_confirmation,
-          token
+          token,
         });
 
         history.push('/');
@@ -96,11 +96,11 @@ const SignIn: React.FC = () => {
             />
 
             <Input
-            name="password_confirmation"
-            icon={FiLock}
-            type="password"
-            placeholder="Confirmação da senha"
-          />
+              name="password_confirmation"
+              icon={FiLock}
+              type="password"
+              placeholder="Confirmação da senha"
+            />
 
             <Button type="submit">Alterar senha</Button>
           </Form>
